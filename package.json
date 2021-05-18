@@ -6,6 +6,7 @@
   "scripts": {
     "devStart": "nodemon App.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -25,7 +26,8 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.0",
+    "sequelize": "^5.22.3",
+    "sequelize-cli": "^6.2.0",
     "tedious": "^11.0.4"
   }
 }

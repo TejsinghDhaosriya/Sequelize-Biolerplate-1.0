@@ -5,7 +5,7 @@ const sequelizeConnection = require("../db/mysql-connection");
 class User extends Model {}
 User.init(
   {
-    ID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
