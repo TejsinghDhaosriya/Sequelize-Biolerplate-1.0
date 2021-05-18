@@ -10,6 +10,7 @@ User.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+      defaultValue: Sequelize.UUIDV4,
     },
     username: {
       type: DataTypes.STRING,
