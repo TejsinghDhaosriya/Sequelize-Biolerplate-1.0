@@ -38,18 +38,21 @@ async function login(req, res, next) {
         .status(StatusCodes.NOT_FOUND)
         .json({ success: false, massage: "User Not found !!!" });
     }
-    const { ID } = await userModel.checkLogin(username, password);
-    if (!ID) {
+    const  data  = await userModel.checkLogin(username, password);
+    console.log(data,'here....')
+    if (data===false) {
       res
         .status(StatusCodes.UNAUTHORIZED)
         .json({ success: false, massage: "Email OR password is not correct" });
     }
-
+   
+    else{
     res.status(StatusCodes.OK).json({
       success: true,
-      Token: jwt.generateExpirationToken(username, ID),
+      Token: jwt.generateExpirationToken(username, data),
     });
   }
+}
   catch(err){
     console.error(err)
     next(err)

@@ -58,7 +58,7 @@ async function checkLogin(username, password) {
     },
   });
   if (!user) {
-    return true;
+    return false;
   }
   return user;
 }
